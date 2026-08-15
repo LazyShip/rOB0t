@@ -13,10 +13,10 @@ log.setLevel(logging.ERROR)
 app = Flask(__name__)
 
 # ==================== 配置区域 ====================
-BOT_QQ = 3679753454                             #  QQ
-TS_API_KEY = "I9EV-J3CA-UOAI-D2PX-NRI8-PUV9"  # TS ClientQuery API Key
-LISTEN_PORT = 8080                              # 本地端口
-NAPCAT_API_URL = "http://127.0.0.1:3000"        # NapCat HTTP 接口
+BOT_QQ =                              #  QQ
+TS_API_KEY = ""  # TS ClientQuery API Key
+LISTEN_PORT =                               # 本地端口
+NAPCAT_API_URL = ""        # NapCat HTTP 接口
 TRIGGER_WORDS = ["ts"] #触发词
 # =================================================
 
@@ -153,7 +153,7 @@ def handle_qq_event():
 
         send_qq_group_msg(group_id, reply)
     else:
-        # 如果只艾特了机器人但没带触发词，终端打印一下但不回复
+        # 如果只艾特机器人但没触发词，终端打印不回复
         print(f"\n👻 群 [{group_id}] {sender} @了机器人，但没有带有效指令: '{clean_msg}'，已忽略。")
 
     return jsonify({"status": "ok"})
