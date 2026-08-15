@@ -1,1 +1,2 @@
 flask
+napcat shell
